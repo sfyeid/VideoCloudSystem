@@ -6,3 +6,6 @@ uvicorn[standard]
 ffmpeg-python
 pytest
 python-multipart
+pytest
+httpx
+pytest-mock
