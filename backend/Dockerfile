@@ -6,8 +6,8 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 RUN pip install pytest
 RUN apt-get update && apt-get install -y netcat-traditional
-COPY ./backend/wait-for-it.sh /app/wait-for-it.sh
-RUN chmod +x /app/wait-for-it.sh
+COPY wait-for-it.sh wait-for-it.sh
+RUN chmod +x wait-for-it.sh
 
 
 
@@ -15,4 +15,4 @@ RUN chmod +x /app/wait-for-it.sh
 
 COPY . .
 
-CMD ["/app/wait-for-it.sh", "postgres", "5432", "--", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["wait-for-it.sh", "postgres", "5432", "--", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
