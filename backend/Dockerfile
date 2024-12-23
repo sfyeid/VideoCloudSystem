@@ -6,7 +6,7 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 RUN pip install pytest
 RUN apt-get update && apt-get install -y netcat-traditional
-COPY wait-for-it.sh /app/wait-for-it.sh
+COPY ./backend/wait-for-it.sh /app/wait-for-it.sh
 RUN chmod +x /app/wait-for-it.sh
 
 
