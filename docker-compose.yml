@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - YANDEX_BUCKET_NAME=video-cloud-system
+      - YANDEX_ACCESS_KEY_ID=YCAJElSEp6nLlLYKJNR7Ak7vp
+      - YANDEX_SECRET_ACCESS_KEY=YCOLuIACnpxZH__JnQVxNPJTTHY0YN3vPoVk0Avs
+      - DATABASE_URL=postgresql://username:password@postgres/dbname
+    depends_on:
+      - postgres
+    
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    
+
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: dbname
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    container_name: postgres
+    
+
+volumes:
+  postgres_data:

@@ -1,0 +1,252 @@
+/* Глобальные стили */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Стиль для модального окна */
+  .ReactModal__Content {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Стиль для крестика (закрытия окна) */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Стиль для кнопок */
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+  }
+  
+  /* Основной синий цвет */
+  .button-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .button-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  button.close-btn {
+    background: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Центрирование кнопки загрузки */
+  .upload-btn {
+    display: block;
+    margin: 20px auto;
+  }
+  
+  /* Стиль для текста о видео */
+  .no-videos-message {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+  }
+  
+  /* Стили для списка видео */
+  .video-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .video-item {
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .video-item video {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-item p {
+    color: #333;
+    margin-top: 10px;
+  }
+
+  /* Стиль для текстовой кнопки "Удалить" */
+.delete-btn {
+    background: none;
+    color: red;
+    border: none;
+    font-size: 16px;
+    
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    color: darkred;
+  }
+
+/* App.css */
+
+/* Стили для контейнера прогресса */
+.loading-container {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.5s ease-out;
+    border-radius: 5px;
+  }
+  
+  .upload-status {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .upload-status p {
+    margin: 0;
+  }
+  
+  /* Анимация загрузки */
+  @keyframes spinning {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .spinner {
+    border: 4px solid #f3f3f3; /* Светлый фон */
+    border-top: 4px solid #3498db; /* Синий цвет */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spinning 1s linear infinite;
+  }
+  
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+/* Стили для области перетаскивания */
+.dropzone {
+    border: 2px dashed #007bff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .dropzone:hover {
+    background-color: #e0f7ff;
+  }
+  
+  .dropzone p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  /* Стиль для кнопки загрузки */
+  .button-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .button-primary:disabled {
+    background-color: #b0b0b0;
+    cursor: not-allowed;
+  }
+  
+  /* Стили для текстовой ссылки "Удалить" */
+  .delete-link {
+    color: #f44336;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .delete-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Иконка удаления */
+  .delete-link svg {
+    font-size: 18px;
+  }
+  
+  /* Стили для иконки файла */
+  span {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  span svg {
+    margin-right: 8px;
+  }
+  
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

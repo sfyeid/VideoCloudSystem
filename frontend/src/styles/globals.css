@@ -1,0 +1,61 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Для видео списка */
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.video-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Модальное окно */
+.ReactModal__Overlay {
+  z-index: 1000;
+}
+
+.ReactModal__Content {
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}

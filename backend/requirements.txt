@@ -1,0 +1,7 @@
+fastapi
+sqlalchemy
+psycopg2-binary
+boto3
+uvicorn[standard]
+ffmpeg-python
+python-multipart
