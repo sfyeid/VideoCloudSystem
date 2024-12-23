@@ -15,4 +15,4 @@ RUN chmod +x /app/wait-for-it.sh
 
 COPY . .
 
-CMD ["./app/wait-for-it.sh", "postgres", "5432", "--", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["/app/wait-for-it.sh", "postgres", "5432", "--", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
