@@ -7,16 +7,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    working_dir: /app
-    command: ["/backend/wait-for-it.sh", "postgres:5432", "--", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    command: ["./wait-for-it.sh", "postgres", "5432", "--", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
     environment:
-      - PYTHONPATH=/app
       - YANDEX_BUCKET_NAME=video-cloud-system
       - YANDEX_ACCESS_KEY_ID=YCAJElSEp6nLlLYKJNR7Ak7vp
       - YANDEX_SECRET_ACCESS_KEY=YCOLuIACnpxZH__JnQVxNPJTTHY0YN3vPoVk0Avs
       - DATABASE_URL=postgresql://username:password@postgres/dbname
-    volumes:
-      - .:/app
+
     depends_on:
       - postgres
 
