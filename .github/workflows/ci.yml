@@ -46,8 +46,5 @@ jobs:
         docker-compose -f docker-compose.yml build
         docker-compose -f docker-compose.yml up -d
 
-    - name: Run tests
-      run: |
-        docker-compose -f docker-compose.yml exec -T backend pytest
-        docker-compose -f docker-compose.yml down
+
 

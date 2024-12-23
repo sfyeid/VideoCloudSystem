@@ -1,4 +1,4 @@
-version: '3.8'
+
 
 services:
   backend:
@@ -7,13 +7,19 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    working_dir: /app
     environment:
+      - PYTHONPATH=/app
       - YANDEX_BUCKET_NAME=video-cloud-system
       - YANDEX_ACCESS_KEY_ID=YCAJElSEp6nLlLYKJNR7Ak7vp
       - YANDEX_SECRET_ACCESS_KEY=YCOLuIACnpxZH__JnQVxNPJTTHY0YN3vPoVk0Avs
       - DATABASE_URL=postgresql://username:password@postgres/dbname
+    volumes:
+      - .:/app
     depends_on:
       - postgres
+
+      
     
 
   frontend:
