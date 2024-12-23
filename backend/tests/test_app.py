@@ -1,6 +1,12 @@
 
 import pytest # type: ignore
 from fastapi.testclient import TestClient
+import sys
+import os
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "app"))
+
 from app.main import app
 from unittest import mock
 from app.models import Video
