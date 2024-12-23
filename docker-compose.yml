@@ -8,7 +8,7 @@ services:
     ports:
       - "8000:8000"
     working_dir: /app
-    command: ["./wait-for-it.sh", "postgres:5432", "--", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    command: ["./backend/app/wait-for-it.sh", "postgres:5432", "--", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
     environment:
       - PYTHONPATH=/app
       - YANDEX_BUCKET_NAME=video-cloud-system
